@@ -21,7 +21,7 @@ a {
 /********************************header*****************************************/
 header{
     
-    background-color: #ff5e00;
+    background-color: #141414;
     display: flex;
    
     justify-content: space-between;
@@ -30,6 +30,7 @@ header{
     align-items: center;
     color: white;
     padding: 20px 10px;
+    border-bottom: 1px solid #ff5e00;
 }
 header img{
     border-radius: 50%;
@@ -46,7 +47,7 @@ header nav ul{
 .search{
     display: flex;
     width: 50vw;
-    background-color: #b35d2b;
+    background-color: #e7661b;
     align-items: center;
     margin: 50px 0;
     padding: 5px;
@@ -96,7 +97,7 @@ button {
     position: relative;
     height: 50vh;
     
-    background-color:#08090c;
+    background-color:#141414;
     
 
 }
