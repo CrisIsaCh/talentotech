@@ -23,7 +23,7 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding:120px;
 }
 
 button {
@@ -33,8 +33,14 @@ button {
 .card {
     color: aliceblue;
     position: relative;
-    height: 30vw;
+    height: 50vh;
+    
+    background-color:#08090c;
+    
 
+}
+.card:hover{
+    border: 1px solid #ff5e00;
 }
 
 .card button {
@@ -48,8 +54,9 @@ button {
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     color: #ff5e00;
-
     font-size: 30px;
+    z-index: 3;
+    
 } 
 .card button:hover{
     color: #ff5e00;
@@ -57,19 +64,48 @@ button {
 }
 .card button i{
 position: relative;
-top: 2px;
+top: 4px;
 }
 
 .card a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height:50vh;
 
 }
 
 .card a img {
     width: 100%;
     object-fit: cover;
+    height:35vh;
+} 
+.card-img{
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+.card a img:hover{
+    transform: scale(1.1);
+    transition: transform .5s;
+}
+.card a div h2{
+    font-family: 'Gothic A1';
+    font-size: 23px;
+    padding: 0px 20px;
+    font-weight: bold;
+}
+.card a div p{
+    font-family: 'Lato';
+    padding: 0px 20px;
+    font-size: 40px;
+}
+.card-resena{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
     height: 100%;
+    align-items: center;
+    
+
 }
