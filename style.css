@@ -834,6 +834,58 @@ textarea::placeholder {
 .item10 {
     grid-column-start: 5;
     grid-column-end: 7;
+
+}
+
+/**************footer*********************/
+
+footer{
+    height: 340px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    
+    
+   
+}
+footer div img{
+    width: 300px;
+}
+footer section{
+    display: flex;
+    justify-content: space-around;
+    background-color: #ff640a;
+}
+footer section h1{
+    font-size: 60px;
+    color: white;
+    font-family: 'Gothic A1';
+    font-weight: bold;
+}
+.f-h1-redes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+    font-size: 50px;
+    color: white;
+}
+.redes a:hover{
+    color: #000;
+}
+footer div span{
+    color: white;
+    font-family: 'Gothic A1';
+    font-size: 20px;
+    
+    
+    
 }
 
 /*-------------------------------------*/
