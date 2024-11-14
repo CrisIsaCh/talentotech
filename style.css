@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-style: normal;
+    
 
 }
 
@@ -875,9 +876,12 @@ footer section h1{
 .redes{
     display: flex;
     justify-content: space-around;
-    font-size: 35px;
+    font-size: 30px;
     color: white;
+    
+    
 }
+
 .redes a:hover{
     color: #000;
 }
@@ -1088,6 +1092,7 @@ footer div span{
     .ver-logo {
         display: block;
         height: 70px;
+        
     }
 
     .nav {
