@@ -840,7 +840,9 @@ textarea::placeholder {
 /**************footer*********************/
 
 footer{
-    height: 340px;
+    height: 250px;
+    
+    
     
     display: flex;
     flex-direction: column;
@@ -851,7 +853,7 @@ footer{
    
 }
 footer div img{
-    width: 300px;
+    width: 200px;
 }
 footer section{
     display: flex;
@@ -859,7 +861,7 @@ footer section{
     background-color: #ff640a;
 }
 footer section h1{
-    font-size: 60px;
+    font-size: 40px;
     color: white;
     font-family: 'Gothic A1';
     font-weight: bold;
@@ -873,7 +875,7 @@ footer section h1{
 .redes{
     display: flex;
     justify-content: space-around;
-    font-size: 50px;
+    font-size: 35px;
     color: white;
 }
 .redes a:hover{
@@ -882,7 +884,7 @@ footer section h1{
 footer div span{
     color: white;
     font-family: 'Gothic A1';
-    font-size: 20px;
+    font-size: 15px;
     
     
     
