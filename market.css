@@ -31,7 +31,7 @@ header{
     align-items: center;
     color: white;
     padding: 20px 10px;
-    border-bottom: 1px solid #ff5e00;
+    border-bottom: 2px solid #ff5e00;
 }
 header img{
     border-radius: 50%;
@@ -83,6 +83,7 @@ input::placeholder{
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    text-align: center;
 }
 .usuario i{
     font-size: 25px;
