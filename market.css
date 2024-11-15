@@ -23,6 +23,7 @@ header{
     
     background-color: #141414;
     display: flex;
+    gap: 8px;
    
     justify-content: space-between;
     font-family: 'Gothic A1';
@@ -43,6 +44,10 @@ header nav ul{
     font-size: 25px;
     
 }
+#home{
+    display: none;
+    font-size: 25px;
+}
 
 .search{
     display: flex;
@@ -52,6 +57,11 @@ header nav ul{
     margin: 50px 0;
     padding: 5px;
     border-radius: 8px;
+    
+}
+input::placeholder{
+    color: white;
+    font-family: 'Gothic A1';
 }
 .search input{
     width: 100%;
@@ -61,7 +71,7 @@ header nav ul{
     height: 40px;
 }
 .search i{
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 10px;
 }
 .usuario{
@@ -75,7 +85,7 @@ header nav ul{
     gap: 15px;
 }
 .usuario i{
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -256,6 +266,28 @@ footer div span{
 }
 
 @media screen and (max-width:766px) {
+    /******************header******************************/
+    #inicio{
+        display: none;
+    }
+    #home{
+        display: block;
+    }
+    header{
+        height: 70px;
+    }
+    header img{
+        width:50px ;
+    }
+    header nav ul {
+        gap:25px;
+    }
+    .usuario{
+        gap: 25px;
+    }
+    .usuario span{
+        display: none;
+    }
 
     /*****************main************************/
     .product{
