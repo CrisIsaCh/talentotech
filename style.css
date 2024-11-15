@@ -841,17 +841,12 @@ textarea::placeholder {
 
 /**************footer*********************/
 
-footer{
-    
-    
-    
+footer{    
     
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-top: 5px solid #ff5e00;
-    
-    
+    border-top: 5px solid #ff5e00;   
     
    
 }

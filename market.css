@@ -174,16 +174,12 @@ top: 4px;
 
 /**************footer*********************/
 
-footer{
-    height: 250px;
-    
-    
+footer{    
     
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
-    
+    border-top: 5px solid #ff5e00;   
     
    
 }
@@ -193,33 +189,40 @@ footer div img{
 footer section{
     display: flex;
     justify-content: space-around;
-    background-color: #ff640a;
+    background-color: #141414;
 }
 footer section h1{
     font-size: 40px;
     color: white;
     font-family: 'Gothic A1';
     font-weight: bold;
+   
 }
 .f-h1-redes{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 35px;
+    
+    
 }
 .redes{
     display: flex;
     justify-content: space-around;
-    font-size: 35px;
+    font-size: 30px;
     color: white;
+    
+    
 }
+
 .redes a:hover{
-    color: #000;
+    color: #ff5e00;
 }
 footer div span{
     color: white;
     font-family: 'Gothic A1';
     font-size: 15px;
+    
     
     
     
@@ -250,4 +253,20 @@ footer div span{
     background-color: #fff;
 
 
+}
+
+@media screen and (max-width:766px) {
+
+    /*****************main************************/
+    .product{
+        padding: 30px;
+    }
+
+    /*******************footer************/
+    footer div img{
+        width: 150px;
+    }
+    footer section h1{
+        font-size: 30px;
+    }
 }
