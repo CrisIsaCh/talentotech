@@ -159,7 +159,7 @@ top: 4px;
     width: 100%;
 }
 .card a img:hover{
-    transform: scale(1.1);
+    transform: scale(1.25);
     transition: transform .5s;
 }
 .card a div h2{
