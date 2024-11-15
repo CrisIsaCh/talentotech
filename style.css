@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-style: normal;
-    
+
 
 }
 
@@ -627,26 +627,28 @@ section {
 
 .content {
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0;
     text-align: center;
     height: 100%;
     width: 100%;
     /* padding: 2rem; */
     padding-top: 7rem;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, .7);
     transition: all .5s linear;
     cursor: pointer;
 
 }
-.box:hover .content{
+
+.box:hover .content {
     top: 0%;
-    
+
 }
 
 .content h3 {
     color: #ffffff;
     font-family: 'Lato';
+    
 }
 
 /***********************Contacto******************/
@@ -842,58 +844,64 @@ textarea::placeholder {
 
 /**************footer*********************/
 
-footer{    
-    
+footer {
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-top: 5px solid #ff5e00;   
-    
-   
+    border-top: 5px solid #ff5e00;
+
+
 }
-footer div img{
+
+footer div img {
     width: 200px;
 }
-footer section{
+
+footer section {
     display: flex;
     justify-content: space-around;
     background-color: #141414;
 }
-footer section h1{
+
+footer section h1 {
     font-size: 40px;
     color: white;
     font-family: 'Gothic A1';
     font-weight: bold;
-   
+
 }
-.f-h1-redes{
+
+.f-h1-redes {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 35px;
-    
-    
+
+
 }
-.redes{
+
+.redes {
     display: flex;
     justify-content: space-around;
     font-size: 30px;
     color: white;
-    
-    
+
+
 }
 
-.redes a:hover{
+.redes a:hover {
     color: #ff5e00;
 }
-footer div span{
+
+footer div span {
     color: white;
     font-family: 'Gothic A1';
     font-size: 15px;
-    
-    
-    
-    
+
+
+
+
 }
 
 /*-------------------------------------*/
@@ -1094,7 +1102,7 @@ footer div span{
     .ver-logo {
         display: block;
         height: 70px;
-        
+
     }
 
     .nav {
@@ -1226,13 +1234,29 @@ footer div span{
     .imagen-logo {
         display: none;
     }
+
     /************************************************************************************/
     /********************************servicios*************/
-    .servicios-detail {          
-        padding: 50px 30px;  
+    .servicios-detail {
+        padding: 50px 30px;
     }
 
+    /************************galeria*****************************************/
 
+    .galeria {
+
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .box img {
+        height: 100px;
+    }
+
+    .content h3{
+        position: relative;
+        top: -14vh;
+        font-size: 13px;
+    }
     /***********************contacto***************/
     .contacto {
         justify-content: center;
@@ -1247,14 +1271,16 @@ footer div span{
         flex-grow: 1;
         background-image: url("./asset/Asado-de-Cerdo.webp");
         background-size: cover;
-        padding: 10px 40px 30px;  
+        padding: 10px 40px 30px;
         height: 100%;
 
     }
-    .contacto-form-der{
+
+    .contacto-form-der {
         background-color: transparent;
     }
-    .formulario{
+
+    .formulario {
         padding: 0;
     }
 
@@ -1265,16 +1291,19 @@ footer div span{
         gap: 4px;
         height: 100%;
     }
-    input,select{
+
+    input,
+    select {
         font-size: 18px;
     }
 
     /****************footer*****************************************/
 
-    footer div img{
+    footer div img {
         width: 150px;
     }
-    footer section h1{
+
+    footer section h1 {
         font-size: 30px;
     }
 }
