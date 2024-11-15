@@ -688,6 +688,7 @@ section {
     background-color: #08090c;
     height: 100%;
     align-items: center;
+    width: 100%;
 
 }
 
@@ -1226,14 +1227,8 @@ footer div span{
     }
     /************************************************************************************/
     /********************************servicios*************/
-    .servicios-detail {
-        
-        
-        
-        
-        padding: 50px 30px;
-       
-    
+    .servicios-detail {          
+        padding: 50px 30px;  
     }
 
 
@@ -1245,15 +1240,21 @@ footer div span{
 
     .contacto-izquierda {
         display: none;
-
-
     }
 
     .contacto-derecha {
         flex-grow: 1;
-        background-image: url("./asset/img2.webp");
+        background-image: url("./asset/Asado-de-Cerdo.webp");
         background-size: cover;
+        padding: 10px 40px 30px;  
+        height: 100%;
 
+    }
+    .contacto-form-der{
+        background-color: transparent;
+    }
+    .formulario{
+        padding: 0;
     }
 
     .formulario form {
@@ -1262,10 +1263,9 @@ footer div span{
         flex-direction: column;
         gap: 4px;
         height: 100%;
-        padding: 3px;
-
-
-
+    }
+    input,select{
+        font-size: 18px;
     }
 
 }
