@@ -512,7 +512,7 @@ section {
     margin: 25px 0;
     flex-grow: 1;
     align-items: start;
-    background-color: #3035472b;
+    background-color: #141414;
     /* position: relative; */
     border: #ff5e00 1px solid;
 
@@ -562,7 +562,7 @@ section {
     margin: 25px 0;
     flex-grow: 1;
     align-items: start;
-    background-color: #3035472b;
+    background-color: #141414;
     /* position: relative; */
 
 
@@ -842,13 +842,14 @@ textarea::placeholder {
 /**************footer*********************/
 
 footer{
-    height: 250px;
+    
     
     
     
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-top: 5px solid #ff5e00;
     
     
     
@@ -860,19 +861,22 @@ footer div img{
 footer section{
     display: flex;
     justify-content: space-around;
-    background-color: #ff640a;
+    background-color: #141414;
 }
 footer section h1{
     font-size: 40px;
     color: white;
     font-family: 'Gothic A1';
     font-weight: bold;
+   
 }
 .f-h1-redes{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 35px;
+    
+    
 }
 .redes{
     display: flex;
@@ -884,12 +888,13 @@ footer section h1{
 }
 
 .redes a:hover{
-    color: #000;
+    color: #ff5e00;
 }
 footer div span{
     color: white;
     font-family: 'Gothic A1';
     font-size: 15px;
+    
     
     
     
@@ -1268,4 +1273,12 @@ footer div span{
         font-size: 18px;
     }
 
+    /****************footer*****************************************/
+
+    footer div img{
+        width: 150px;
+    }
+    footer section h1{
+        font-size: 30px;
+    }
 }
