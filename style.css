@@ -37,6 +37,9 @@ a {
     text-decoration: none;
     /* text-transform: uppercase; */
 }
+.mobile-header, .nav li a{
+    text-transform: uppercase;
+}
 
 li:hover {
     transition: transform .5s;
@@ -547,7 +550,7 @@ section {
     align-self: flex-end;
 
 } */
-/********************************************************/
+/********************estilo boton************************************/
 .btn-2 {
     border: 2px solid #000000;
    
@@ -761,7 +764,7 @@ section {
 .contacto-form-der {
     display: flex;
     flex-direction: column;
-    background-color: #08090c;
+    background-color: #141414;
     height: 100%;
     align-items: center;
     width: 100%;
