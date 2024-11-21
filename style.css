@@ -41,11 +41,11 @@ a {
     text-transform: uppercase;
 }
 
-li:hover {
+/* li:hover {
     transition: transform .5s;
     transform: scale(1.3);
 
-}
+} */
 
 button {
     cursor: pointer;
@@ -122,7 +122,71 @@ section {
     align-items: center;
 
 }
+/************************botones animacion nav**********************************/
+.link {
+    /* display: inline-block;
+    padding: 0;
+    font-size: 25px;
+    font-family: sans-serif;
+    margin: 25px; */
+    font-size: 1.6vw;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
 
+.link a:hover::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 136, 0);
+    position: absolute;
+    bottom: 0px;
+    left: -145%;
+    animation: movErentrar 0.3s ease-in-out forwards;
+    z-index: -1;
+
+}
+
+.link a:not(:hover)::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 136, 0);
+    position: absolute;
+    bottom: 0px;
+    left: -145%;
+    animation: movErsalir 0.3s ease-in-out forwards;
+    z-index: -1;
+
+}
+
+
+@keyframes movErentrar {
+    0% {
+        left: -145%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes movErsalir {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -145%;
+    }
+}
+
+
+
+/**********************************************************/
 
 .nav ul li a {
     color: #fff;
