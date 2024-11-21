@@ -551,7 +551,7 @@ section {
 
 } */
 /********************estilo boton************************************/
-.btn-2 {
+.btn-2,.btn-form {
     border: 2px solid #000000;
    
     overflow: hidden;
@@ -619,6 +619,65 @@ section {
     top: -140%;
 
 }
+/**********boton enviar*********/
+.btn-form button {
+
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: 'Gothic A1';   
+    padding: 7px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    border: none; 
+    
+
+}
+
+
+.btn-form button::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 500%;
+    height: 900%;
+    background-color: #ff5e00;
+    left:70%;
+    top: -290%;
+    z-index: -1;
+    transform: rotate(40deg);
+
+    transition: all .2s ease-in-out;
+}
+.btn-form button:hover::after {
+
+    left: 900%;
+    
+
+}
+.btn-form button::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 500%;
+    height: 900%;
+    background-color: #ff5e00;
+    left:-485%;
+    top: -500%;
+    z-index: -1;
+    transition: all .2s ease-in-out;
+    transform: rotate(40deg);
+}
+.btn-form button:hover::before {
+
+    left: -1200%;
+    
+
+}
+
+
+
 
 
 
