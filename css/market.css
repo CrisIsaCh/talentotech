@@ -18,13 +18,14 @@ a {
 
 
 }
+
 /********************************header*****************************************/
-header{
-    
+header {
+
     background-color: #141414;
     display: flex;
     gap: 8px;
-   
+
     justify-content: space-between;
     font-family: 'Gothic A1';
 
@@ -33,17 +34,20 @@ header{
     padding: 20px 10px;
     border-bottom: 2px solid #ff5e00;
 }
-header img{
+
+header img {
     border-radius: 50%;
     width: 150px;
 }
-header nav ul{
+
+header nav ul {
     display: flex;
     align-items: center;
     gap: 50px;
     font-size: 25px;
-    
+
 }
+
 /************************botones animacion nav**********************************/
 .link {
     /* display: inline-block;
@@ -111,12 +115,12 @@ header nav ul{
 
 
 /**********************************************************/
-#home{
+#home {
     display: none;
     font-size: 25px;
 }
 
-.search{
+.search {
     display: flex;
     width: 50vw;
     background-color: #e7661b;
@@ -124,187 +128,298 @@ header nav ul{
     margin: 50px 0;
     padding: 5px;
     border-radius: 8px;
-    
+
 }
-input::placeholder{
+
+input::placeholder {
     color: white;
     font-family: 'Gothic A1';
 }
-.search input{
+
+.search input {
     width: 100%;
     background-color: transparent;
     border: none;
     outline: none;
     height: 40px;
 }
-.search i{
+
+.search i {
     font-size: 25px;
     margin-left: 10px;
 }
-.usuario{
+
+.usuario {
     display: flex;
     gap: 40px;
 }
-.user , .mimarket{
+
+.user,
+.mimarket {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     text-align: center;
 }
-.usuario i{
+
+.usuario i {
     font-size: 25px;
     font-weight: bold;
 }
 
 
 /*******************************main**************************************/
-.product {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding:120px;
+
+
+
+
+
+.main {
+    display: flex;
+    width: 100%;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-around;
+
+
 }
 
-button {
+table {
+
+    border-collapse: collapse;
+    font-family: 'Lato';
+    width: 60%;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+
+}
+
+table tr td a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+
+
+
+}
+
+tbody tr {
+    height: auto;
+}
+
+tbody tr td:nth-child(3) {
+    max-width: 150px;
+}
+
+tbody tr td:nth-child(2) {
+    width: 70px;
+
+}
+
+td {
+
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(209, 193, 193);
+    text-align: start;
+    vertical-align: middle;
+
+
+
+}
+
+th {
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(209, 193, 193);
+    text-align: start;
+    text-transform: uppercase;
+    font-weight: bold;
+
+
+}
+
+.btn-eliminar {
+    all: unset;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-}
-
-.card {
-    color: aliceblue;
-    position: relative;
-    height: 50vh;
-    
-    background-color:#141414;
-    
 
 }
-.card:hover{
-    border: 1px solid #ff5e00;
+
+.producto-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
 }
 
-.card button {
-    position: absolute;
-    
-    right:10px;
-    top: 10px;
+.contenedor-cantidad {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.contenedor-cantidad button {
+
+
+    height: 25px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    color: #000;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+    padding: 1px 6px;
+
+
+}
+
+.contenedor-cantidad input {
 
     width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    color: #ff5e00;
-    font-size: 25px;
-    z-index: 3;
-    
-} 
-.card button:hover{
-    color: #ff5e00;
-    background-color: #000;
-}
-.card button i{
-position: relative;
-top: 4px;
-}
+    text-align: center;
+    border: 2px solid #ececec;
+    color: #000;
 
-.card a {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height:50vh;
+    border-radius: 7px;
+
 
 }
 
-.card a img {
-    width: 100%;
-    object-fit: cover;
-    height:35vh;
-} 
-.card-img{
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-.card a img:hover{
-    transform: scale(1.25);
-    transition: transform .5s;
-}
-.card a div h2{
-    font-family: 'Gothic A1';
-    font-size: 20px;
-    padding: 0px 20px;
-    font-weight: bold;
-}
-.card a div p{
-    font-family: 'Lato';
-    padding: 0px 20px;
-    font-size: 30px;
-}
-.card-resena{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
+
+.section-total {
+    width: 30%;
     height: 100%;
-    align-items: center;
-    
+    flex-grow: 1;
+}
+
+.totales {
+    color: rgb(255, 255, 255);
+    border: 3px solid #bdb2b2;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    font-weight: bold;
+    width: 100%;
+    border-radius: 7px;
+
 
 }
+
+.totales h2 {
+    white-space: nowrap;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: start;
+    font-size: 18px;
+
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+
+}
+
+.strong-span-total{
+    padding: 15px 0px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.totales button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ff5e00;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+}
+
 
 /**************footer*********************/
 
-footer{    
-    
+footer {
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-top: 5px solid #ff5e00;   
-    
-   
+    border-top: 5px solid #ff5e00;
+
+
+
 }
-footer div img{
+
+footer div img {
     width: 200px;
 }
-footer section{
+
+footer section {
     display: flex;
     justify-content: space-around;
     background-color: #141414;
 }
-footer section h1{
+
+footer section h1 {
     font-size: 40px;
     color: white;
     font-family: 'Gothic A1';
     font-weight: bold;
-   
+
 }
-.f-h1-redes{
+
+.f-h1-redes {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 35px;
-    
-    
+
+
 }
-.redes{
+
+.redes {
     display: flex;
     justify-content: space-around;
     font-size: 30px;
     color: white;
-    
-    
+
+
 }
 
-.redes a:hover{
+.redes a:hover {
     color: #ff5e00;
 }
-footer div span{
+
+footer div span {
     color: white;
     font-family: 'Gothic A1';
     font-size: 15px;
-    
-    
-    
-    
+    padding: 0;
+
+
+
 }
+
 /*-------------------------------------*/
 /* BOTON WHATSSAP */
 .btn-wsp {
@@ -334,39 +449,45 @@ footer div span{
 }
 
 @media screen and (max-width:766px) {
+
     /******************header******************************/
-    #inicio{
+    #inicio {
         display: none;
     }
-    #home{
+
+    #home {
         display: block;
     }
-    header{
+
+    header {
         height: 70px;
     }
-    header img{
-        width:50px ;
+
+    header img {
+        width: 50px;
     }
+
     header nav ul {
-        gap:25px;
-    }
-    .usuario{
         gap: 25px;
     }
-    .usuario span{
+
+    .usuario {
+        gap: 25px;
+    }
+
+    .usuario span {
         display: none;
     }
 
     /*****************main************************/
-    .product{
-        padding: 30px;
-    }
+
 
     /*******************footer************/
-    footer div img{
+    footer div img {
         width: 150px;
     }
-    footer section h1{
+
+    footer section h1 {
         font-size: 30px;
     }
 }
