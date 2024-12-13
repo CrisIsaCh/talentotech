@@ -965,11 +965,14 @@ textarea {
     border: 1px solid white;
     outline: none;
     resize: none;
+
 }
 
 textarea::placeholder {
     color: rgb(103, 99, 99);
     font-family: 'Lato';
+    text-align: start;
+    
 }
 
 .btn-enviar {
@@ -1033,6 +1036,7 @@ textarea::placeholder {
 .item9 {
     grid-column-start: 1;
     grid-column-end: 7;
+    
 }
 
 .item10 {
@@ -1341,7 +1345,7 @@ footer div span {
     .mobile-header li a {
         color: #fff;
     }
-
+    /***************** ******************/
     .open {
         transform: translateX(100%);
         transition: all .2s ease;
