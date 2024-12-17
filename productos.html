@@ -29,7 +29,7 @@
             <input type="text" placeholder="Buscar producto">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        <div class="usuario" >
+        <div class="usuario">
             <div class="user">
                 <a href=""><i class="fa-regular fa-user"></i></a>
                 <span>Mi cuenta</span>
@@ -43,7 +43,7 @@
     </header>
 
     <main>
-        <section class="product">
+        <section class="product" id="product">
             <div class="card">
                 <button id="carrito" class="carrito"><i class="fa-solid fa-cart-shopping"></i></button>
                 <a href="">
@@ -216,111 +216,61 @@
 
 
         </section>
-        
-        
-            <div id="modal-contenedor">
-                <div id="modal-c-1">
-                    <div id="modal-header">
-                        <span>Productos selecionados</span>
-                        <div>
-                            <a href=""><i class="fa-solid fa-x"></i>
-                                Cerrar
-                            </a>
-                        </div>
 
+
+        <div id="modal-contenedor">
+            <div id="modal-c-1">
+                <div id="modal-header">
+                    <span>Productos selecionados</span>
+                    <div>
+                        <a href=""><i class="fa-solid fa-x"></i>
+                            Cerrar
+                        </a>
                     </div>
-                    <div id="modal-contenido">
 
-
-                        <div id="modal-content">
-                            <a href="">
-                                <div id=""><img
-                                        src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX093YV/200/200/original?country=ar"
-                                        alt=""></div>
-                                <div id="modal-descripcion">
-                                    <h4>Porta caramañola wjks plastico con tornillos negro tipo side</h4>
-                                    <h5> 2x $6.600</h5>
-                                    <span>¡Excelente eleccion!</span>
-                                </div>
-                            </a>
-                            <div>
-                                <button><i class="fa-solid fa-x"></i></button>
-
-                            </div>
-
-                        </div>
-                        <div id="modal-content">
-                            <a href="">
-                                <div id=""><img
-                                        src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX093YV/200/200/original?country=ar"
-                                        alt=""></div>
-                                <div id="modal-descripcion">
-                                    <h4>Porta caramañola wjks plastico con tornillos negro tipo side</h4>
-                                    <h5> 2x $6.600</h5>
-                                    <span>¡Excelente eleccion!</span>
-                                </div>
-                            </a>
-                            <div>
-                                <button><i class="fa-solid fa-x"></i></button>
-
-                            </div>
-
-                        </div>
-                        <div id="modal-content">
-                            <a href="">
-                                <div id=""><img
-                                        src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX093YV/200/200/original?country=ar"
-                                        alt=""></div>
-                                <div id="modal-descripcion">
-                                    <h4>Porta caramañola wjks plastico con tornillos negro tipo side</h4>
-                                    <h5> 2x $6.600</h5>
-                                    <span>¡Excelente eleccion!</span>
-                                </div>
-                            </a>
-                            <div>
-                                <button><i class="fa-solid fa-x"></i></button>
-
-                            </div>
-
-                        </div>
-                        <div id="modal-content">
-                            <a href="">
-                                <div id=""><img
-                                        src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX093YV/200/200/original?country=ar"
-                                        alt=""></div>
-                                <div id="modal-descripcion">
-                                    <h4>Porta caramañola wjks plastico con tornillos negro tipo side</h4>
-                                    <h5> 2x $6.600</h5>
-                                    <span>¡Excelente eleccion!</span>
-                                </div>
-                            </a>
-                            <div>
-                                <button><i class="fa-solid fa-x"></i></button>
-
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
                 </div>
+                <div id="modal-contenido">
+                    <!-- <div id="modal-content">
+                        <a href="">
+                            <div id=""><img
+                                    src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX093YV/200/200/original?country=ar"
+                                    alt=""></div>
+                            <div id="modal-descripcion">
+                                <h4>Porta caramañola wjks plastico con tornillos negro tipo side</h4>
+                                <h5> 2x $6.600</h5>
+                                <span>¡Excelente eleccion!</span>
+                            </div>
+                        </a>
+                        <div>
+                            <button><i class="fa-solid fa-x"></i></button>
 
-                <div id="modal-total">
-                    <div id="modal-t-price">
-                        <strong>Subtotal</strong>
-                        <span>$49.254</span>
-                    </div>
-                    <div id="modal-t-botones">
-                        <button>VER CARRITO</button>
-                        <button>FINALIZAR COMPRA</button>
-                    </div>
+                        </div>
+
+                    </div> -->
+                    
+                  
+                 
+
+
 
                 </div>
             </div>
-        
 
-        
+            <div id="modal-total">
+                <div id="modal-t-price">
+                    <strong>Subtotal</strong>
+                    <span>$49.254</span>
+                </div>
+                <div id="modal-t-botones">
+                    <button id="ver-carrito">VER CARRITO</button>
+                    <button id="finalizar-compra">FINALIZAR COMPRA</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
         <a href="" class="btn-wsp" target="_blank"><i class="fa-brands fa-whatsapp "></i></a>
     </main>
     <footer>
@@ -345,7 +295,9 @@
         </div>
 
 
-    </footer>    
+    </footer>
+    <script src="js/productos.js"></script>
+    <!-- <script src="js/carrito.js"></script> -->
     <script src="js/market.js"></script>
     <script src="https://kit.fontawesome.com/a3441e116d.js" crossorigin="anonymous"></script>
 
