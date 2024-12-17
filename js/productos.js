@@ -115,13 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirigir al inicio despues de 4 segundos
         setTimeout(() => {
         window.location.href = 'productos.html'; 
-        }, 4000);   
+        }, 2000);   
         
 
     });
 
     aCerrarmodal.addEventListener('click', () => {
         console.log('cerro');
+        subtotalGral=0;
         
         modalContenido.innerHTML='';
         modal.classList.toggle('abrir')
