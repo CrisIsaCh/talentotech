@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="items-mobile">
                             <strong class="columnas">Precio</strong>
-                            <span>$ 49.506</span>
+                            <span>$ 6.600</span>
                         </div>
                         <div class="input-cantidad">
                             <strong class="columnas">Cantidad</strong>
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="items-mobile">
                             <strong class="columnas">Subtotal</strong>
-                            <span>$49.950</span>
+                            <span>$6.600</span>
                         </div>
 
                     </div>
