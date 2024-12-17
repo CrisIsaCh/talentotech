@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const comidasContenedor = document.getElementById('product');
     const modalContenedor = document.getElementById('modal-contenido')
-    const  botonCarrito=document.getElementById('ver-carrito');
+    const botonCarrito=document.getElementById('ver-carrito');
     const botonFinCompra=document.getElementById('finalizar-compra');
+    const modal = document.getElementById('modal-contenedor');
+    const aCerrarmodal=document.getElementById('a-cerrar-modal');
     console.log(comidasContenedor);
 
     function obtenerComidas() {
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            const modal = document.getElementById('modal-contenedor')
+           
             //agregar evento al boton carrito
             const btnCarrito = cardDiv.querySelector('#carrito');
 
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div id="modal-descripcion">
                     <h4>${elemento.name}</h4>
-                    <h5> 2x $6.600</h5>
+                    <h5> 1x $6.600</h5>
                     <span>¡Excelente eleccion!</span>
                 </div>
             </a>
@@ -116,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = "productos.html";
 
  })
+ aCerrarmodal.addEventListener('click',()=>{
+    modal.classList.toggle('abrir')
+ })
+
 
     obtenerComidas();
 })
