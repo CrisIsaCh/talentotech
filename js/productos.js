@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const aCerrarmodal = document.getElementById('a-cerrar-modal');
     const botonAbrirCerrarModal=document.getElementById('mi-carrito')
     console.log(comidasContenedor);
+    let precio=6200;
+    let cantidad=1;
+    let subtotalGral=0;
+    const spanSubtotalGral=document.getElementById('span-subtotal');
 
     function obtenerComidas() {
 
@@ -30,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             cardDiv.className = 'card';
             cardDiv.innerHTML = `
             <button id="carrito" class="carrito"><i class="fa-solid fa-cart-shopping"></i></button>
-            <a href="">
+            <a href="#">
             <div class="card-img">
              <img src="${comida.image}" alt="">
              </div>
                     <div class="card-resena">
                    <h2>${comida.name}</h2>
-                        <p>$ 6.600</p>
+                        <p>$ ${precio}</p>
                     </div>
                     </a>
                    </div>
@@ -68,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let mostrarModal = () => {
         const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
         carritoStorage.forEach(elemento => {
+            console.log(precio*cantidad);        
+                        
 
             const modalDiv = document.createElement('div');
             modalDiv.id = 'modal-content';
@@ -79,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div id="modal-descripcion">
                     <h4>${elemento.name}</h4>
-                    <h5> 1x $6.600</h5>
+                    <h5> ${cantidad}x $${precio}</h5>
                     <span>¡Excelente eleccion!</span>
                 </div>
             </a>
@@ -88,7 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>    
             `;
            
+            
             modalContenido.appendChild(modalDiv);
+            subtotalGral+=precio*cantidad
+            spanSubtotalGral.textContent=`$ ${subtotalGral}`
            
         });
     }
@@ -100,7 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     botonFinCompra.addEventListener('click', () => {
         alert('COMPRA EXITOSA');
-        window.location.href = "productos.html";
+        // Limpiar el carrito después de finalizar la compra
+        localStorage.removeItem('carrito'); 
+        
+        // Redirigir al inicio despues de 4 segundos
+        setTimeout(() => {
+        window.location.href = 'productos.html'; 
+        }, 4000);   
+        
 
     });
 

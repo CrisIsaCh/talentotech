@@ -2,8 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableContenedor = document.getElementById('table');
     const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
     console.log(carritoStorage);
-    const tablaContenedorMovil = document.getElementById('tabla-mobile')
+    const tablaContenedorMovil = document.getElementById('tabla-mobile');
+    let precio = 6200;
+    let cantidad=1;
+    let subtotalProducto=0;
+    let subtotalGral=0;
+    const spanSubtotal=document.getElementById('subtotal-total');
+    const spanTotalGral=document.getElementById('total-gral')
+    console.log(spanSubtotal.textContent);
+    
+
     carritoStorage.forEach(elemento => {
+        subtotalProducto=(precio*cantidad)
+        
+        console.log(subtotalGral);
+        
 
         const tbodyDiv = document.createElement('tbody');
         tbodyDiv.innerHTML = `
@@ -13,22 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     src="${elemento.image}"
                      alt="Eliminar" class="btn-eliminar"></td>
                 <td><a href="">${elemento.name}</a></td>
-                <td>$6.600</td>
+                <td>$${precio}</td>
                 <td>
                     <div class="contenedor-cantidad">
                          <button>-</button>
-                         <input type="number" value="1" min="1">
+                         <input type="number" value="${cantidad}" min="1">
                          <button>+</button>
                     </div>
                 </td>
-                <td>$6.600</td>
+                <td>$${subtotalProducto}</td>
             </tr>
             `;
-        tableContenedor.appendChild(tbodyDiv)
 
-        const itemsDiv=document.createElement('div');
-        itemsDiv.className='items';
-        itemsDiv.innerHTML=`
+
+        tableContenedor.appendChild(tbodyDiv);
+        subtotalGral+=subtotalProducto;
+        spanSubtotal.textContent=`$${subtotalGral}`;
+        spanTotalGral.textContent=`$${subtotalGral}`
+
+        //////////////////tabla mobile////////////////////////////////////////
+
+        const itemsDiv = document.createElement('div');
+        itemsDiv.className = 'items';
+        itemsDiv.innerHTML = `
           <img src="${elemento.image}"
                         alt="">
                     <div class="mobile">
@@ -38,24 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="items-mobile">
                             <strong class="columnas">Precio</strong>
-                            <span>$ 6.600</span>
+                            <span>$ ${precio}</span>
                         </div>
                         <div class="input-cantidad">
                             <strong class="columnas">Cantidad</strong>
                             <div class="cantidad">
                                 <button>-</button>
-                                <input type="number" value="1" min="1">
+                                <input type="number" value="${cantidad}" min="1">
                                 <button>+</button>
                             </div>
                         </div>
                         <div class="items-mobile">
                             <strong class="columnas">Subtotal</strong>
-                            <span>$6.600</span>
+                            <span>$${subtotalProducto}</span>
                         </div>
 
                     </div>
                     `;
-                    tablaContenedorMovil.appendChild(itemsDiv)
+        tablaContenedorMovil.appendChild(itemsDiv)
     });
 
 
