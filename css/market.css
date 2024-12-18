@@ -592,6 +592,9 @@ footer div span {
     .usuario span {
         display: none;
     }
+    #contador{
+        display: block;
+    }
 
     /*****************main************************/
 

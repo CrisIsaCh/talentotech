@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalDiv = document.createElement('div');
             modalDiv.id = 'modal-content';
             modalDiv.innerHTML = `
-            <a href="">
+            <a href="#">
                 <div id=""><img
                     src="${elemento.image}"
                     alt="">
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContenido.innerHTML = '';
         modal.classList.toggle('abrir')
     });
-    botonAbrirCerrarModal.addEventListener('click', () => {
+    botonAbrirCerrarModal.addEventListener('click', () => {        
         mostrarModal();
         modal.classList.toggle('abrir');
     })
