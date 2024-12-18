@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
     console.log(carritoStorage);
     const tablaContenedorMovil = document.getElementById('tabla-mobile');
+    let contador=document.getElementById('contador');
     let precio = 6200;
     let cantidad=1;
     let subtotalProducto=0;
@@ -77,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
         tablaContenedorMovil.appendChild(itemsDiv)
     });
+    
+
+    if (carritoStorage) {
+        contadorCarrito = carritoStorage.length
+        contador.textContent = contadorCarrito
+    }
 
 
 

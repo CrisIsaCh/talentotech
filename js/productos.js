@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonFinCompra = document.getElementById('finalizar-compra');
     const modal = document.getElementById('modal-contenedor');
     const aCerrarmodal = document.getElementById('a-cerrar-modal');
-    const botonAbrirCerrarModal=document.getElementById('mi-carrito')
+    const botonAbrirCerrarModal = document.getElementById('mi-carrito')
     console.log(comidasContenedor);
-    let precio=6200;
-    let cantidad=1;
-    let subtotalGral=0;
-    const spanSubtotalGral=document.getElementById('span-subtotal');
+    let precio = 6200;
+    let cantidad = 1;
+    let subtotalGral = 0;
+    const spanSubtotalGral = document.getElementById('span-subtotal');
+    let contadorCarrito = 0;
+    const contador = document.getElementById('contador');
 
     function obtenerComidas() {
 
@@ -46,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
                    </div>
                    `;
             //agregar evento al boton carrito
-            const btnCarrito = cardDiv.querySelector('#carrito');            
+            const btnCarrito = cardDiv.querySelector('#carrito');
             btnCarrito.addEventListener("click", () => {
                 console.log('entro');
-                agregarCarrito(comida);                
+                agregarCarrito(comida);
                 mostrarModal();
                 modal.classList.toggle('abrir');
-                
+
 
 
             });
@@ -63,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     let agregarCarrito = (comida) => {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        console.log(carrito);
+
         carrito.push(comida);
         localStorage.setItem('carrito', JSON.stringify(carrito));
         // alert(`${comida.name} ha sido agregado al carrito`)
@@ -70,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ////////cARGAR COMIDAS EN MODAL 
     let mostrarModal = () => {
-        const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
+        const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
         carritoStorage.forEach(elemento => {
-            console.log(precio*cantidad);        
-                        
+            console.log(precio * cantidad);
+
 
             const modalDiv = document.createElement('div');
             modalDiv.id = 'modal-content';
@@ -93,15 +97,40 @@ document.addEventListener('DOMContentLoaded', () => {
                <button><i class="fa-solid fa-x"></i></button>    
             </div>    
             `;
-           
-            
+
+
             modalContenido.appendChild(modalDiv);
-            subtotalGral+=precio*cantidad
-            spanSubtotalGral.textContent=`$ ${subtotalGral}`
-           
+            contador.style.display = 'block'
+
+            contadorCarrito = carritoStorage.length
+            contador.textContent = contadorCarrito
+
+            subtotalGral += precio * cantidad
+            spanSubtotalGral.textContent = `$ ${subtotalGral}`;
+
+
+
         });
+
+
     }
+
+    //////////////////limina el contador si es ==0 //////////////////////////////
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (carritoStorage == 0) {
+        contador.style.display = 'none';
+    } else {
+        contador.style.display = 'block'
+        contadorCarrito = carritoStorage.length
+        contador.textContent = contadorCarrito
+
+    }
+
+
+
     obtenerComidas();
+
 
     botonCarrito.addEventListener('click', () => {
         window.location.href = "market.html";
@@ -110,24 +139,24 @@ document.addEventListener('DOMContentLoaded', () => {
     botonFinCompra.addEventListener('click', () => {
         alert('COMPRA EXITOSA');
         // Limpiar el carrito después de finalizar la compra
-        localStorage.removeItem('carrito'); 
-        
+        localStorage.removeItem('carrito');
+
         // Redirigir al inicio despues de 4 segundos
         setTimeout(() => {
-        window.location.href = 'productos.html'; 
-        }, 2000);   
-        
+            window.location.href = 'productos.html';
+        }, 2000);
+
 
     });
 
     aCerrarmodal.addEventListener('click', () => {
         console.log('cerro');
-        subtotalGral=0;
-        
-        modalContenido.innerHTML='';
+        subtotalGral = 0;
+
+        modalContenido.innerHTML = '';
         modal.classList.toggle('abrir')
     });
-    botonAbrirCerrarModal.addEventListener('click',()=>{
+    botonAbrirCerrarModal.addEventListener('click', () => {
         mostrarModal();
         modal.classList.toggle('abrir');
     })
