@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const spanSubtotal=document.getElementById('subtotal-total');
     const spanTotalGral=document.getElementById('total-gral')
     console.log(spanSubtotal.textContent);
+    const botonFinCompra = document.getElementById('finalizar-compra');
     
 
     carritoStorage.forEach(elemento => {
@@ -84,7 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
         contadorCarrito = carritoStorage.length
         contador.textContent = contadorCarrito
     }
+    botonFinCompra.addEventListener('click', () => {
+        alert('COMPRA EXITOSA');
+        // Limpiar el carrito después de finalizar la compra
+        localStorage.removeItem('carrito');
 
+        // Redirigir al inicio despues de 4 segundos
+        setTimeout(() => {
+            window.location.href = 'productos.html';
+        }, 2000);
+
+
+    });
 
 
 
