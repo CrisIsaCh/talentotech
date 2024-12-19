@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonCarrito = document.getElementById('ver-carrito');
     const botonFinCompra = document.getElementById('finalizar-compra');
     const modal = document.getElementById('modal-contenedor');
+    const overlay = document.getElementById("overlay");
     const aCerrarmodal = document.getElementById('a-cerrar-modal');
     const botonAbrirCerrarModal = document.getElementById('mi-carrito')
     console.log(comidasContenedor);
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 agregarCarrito(comida);
                 mostrarModal();
                 modal.classList.toggle('abrir');
+                overlay.classList.toggle('open');
 
 
 
@@ -154,11 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
         subtotalGral = 0;
 
         modalContenido.innerHTML = '';
-        modal.classList.toggle('abrir')
+        modal.classList.toggle('abrir');
+        overlay.classList.toggle('open');
     });
     botonAbrirCerrarModal.addEventListener('click', () => {        
         mostrarModal();
         modal.classList.toggle('abrir');
+        overlay.classList.toggle('open');
     })
+  
 
 })
