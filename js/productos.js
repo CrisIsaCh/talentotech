@@ -9,15 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const aCerrarmodal = document.getElementById('a-cerrar-modal');
     const botonAbrirCerrarModal = document.getElementById('mi-carrito')
     console.log(comidasContenedor);
-    let precio = 6200;
+    let precio = 5450;
     let cantidad = 1;
     let subtotalGral = 0;
     const spanSubtotalGral = document.getElementById('span-subtotal');
     let contadorCarrito = 0;
     const contador = document.getElementById('contador');
 
+    ////////////////////////////////////////////////////////////////////////
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    
+
+
 
     function obtenerComidas() {
 
@@ -26,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then((data) => {
                 const comidas = data.recipes;
-               
-                
+
+
 
                 // Limpia el contenedor de productos
                 comidasContenedor.innerHTML = "";
                 mostrarComidas(comidas);
-                
+
             });
     }
 
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 agregarCarrito(comida);
                 console.log(comida.id);
 
-                
+
                 mostrarModal();
                 modal.classList.toggle('abrir');
                 overlay.classList.toggle('open');
@@ -76,13 +79,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     let agregarCarrito = (comida) => {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        
+        ///////////////////////encuentra un objeto que ya este en la lista 
+        if (carrito.some((element) => element.id === comida.id)) {
+            /////////////encuentra el inidice de ese objeto
+            let indice = carrito.findIndex(item => item.id === comida.id)
+            console.log(indice);
 
-        carrito.push(comida);
-        console.log(carrito);
-        const array=carrito.filter((item)=>item.id!=comida.id)
-        console.log(array);
-        
+            console.log('si hay');
+
+
+            //////////////////////reemplaza el objeto por otro objeto y aumenta la cantidad
+            carrito.splice(indice, 1, {
+                id: comida.id,
+                nombre: comida.name,
+                cantidad: (carrito[indice].cantidad) += 1,
+                imagen: comida.image,
+                ////////////precio harcodeado
+                precio:5450
+
+            })
+           
+
+
+
+
+        } else {
+            carrito.unshift({
+                id: comida.id,
+                nombre: comida.name,
+                cantidad: 1,
+                imagen: comida.image,
+                ////////////precio harcodeado
+                precio:5450
+            })
+
+        }
+
 
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -101,12 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
             modalDiv.innerHTML = `
             <a href="#">
                 <div id=""><img
-                    src="${elemento.image}"
+                    src="${elemento.imagen}"
                     alt="">
                 </div>
                 <div id="modal-descripcion">
-                    <h4>${elemento.name}</h4>
-                    <h5> ${cantidad}x $${precio}</h5>
+                    <h4>${elemento.nombre}</h4>
+                    <h5> ${elemento.cantidad} x $ ${elemento.precio}</h5>
                     <span>¡Excelente eleccion!</span>
                 </div>
             </a>
@@ -115,11 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>    
             `;
 
-
+///////////////pinta contador del carrito///////////
             modalContenido.appendChild(modalDiv);
             contador.style.display = 'block'
 
-            contadorCarrito = carritoStorage.length
+            contadorCarrito = cantidadTotal()
+            console.log(contadorCarrito);
+            
             contador.textContent = contadorCarrito
 
             subtotalGral += precio * cantidad
@@ -133,20 +167,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //////////////////limina el contador si es ==0 //////////////////////////////
-    const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    
+    let cantidadTotal=()=>{
+        const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+        const cantidadTotal = carritoStorage.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
+        console.log(cantidadTotal);
+        return cantidadTotal
+        
+    }
 
-    if (carritoStorage == 0) {
+    if (carritoStorage.length == 0) {
         contador.style.display = 'none';
     } else {
+
+        //////////////////busca en el el objeto el elemento cantidad y los suma
+        // const cantidadTotal = carritoStorage.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
+        // console.log(cantidadTotal);
+
         contador.style.display = 'block'
-        contadorCarrito = carritoStorage.length
+        contadorCarrito = cantidadTotal()
         contador.textContent = contadorCarrito
 
     }
+    
 
-    console.log(carritoStorage);
-    const array = carritoStorage.filter(item => item.id == 2)
-    console.log(array);
+   
+
+    // console.log(carritoStorage);
+    // const array = carritoStorage.filter(item => item.id == 2)
+    // console.log(array);
 
 
 
