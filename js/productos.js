@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let contadorCarrito = 0;
     const contador = document.getElementById('contador');
 
+
+    
+
     function obtenerComidas() {
 
 
@@ -23,10 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then((data) => {
                 const comidas = data.recipes;
+               
+                
 
                 // Limpia el contenedor de productos
                 comidasContenedor.innerHTML = "";
                 mostrarComidas(comidas);
+                
             });
     }
 
@@ -53,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
             btnCarrito.addEventListener("click", () => {
                 console.log('entro');
                 agregarCarrito(comida);
+                console.log(comida.id);
+
+                
                 mostrarModal();
                 modal.classList.toggle('abrir');
                 overlay.classList.toggle('open');
@@ -67,9 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     let agregarCarrito = (comida) => {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        console.log(carrito);
+        
 
         carrito.push(comida);
+        console.log(carrito);
+        const array=carrito.filter((item)=>item.id!=comida.id)
+        console.log(array);
+        
+
+
         localStorage.setItem('carrito', JSON.stringify(carrito));
         // alert(`${comida.name} ha sido agregado al carrito`)
     };
@@ -129,6 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    console.log(carritoStorage);
+    const array = carritoStorage.filter(item => item.id == 2)
+    console.log(array);
+
 
 
     obtenerComidas();
@@ -159,11 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.toggle('abrir');
         overlay.classList.toggle('open');
     });
-    botonAbrirCerrarModal.addEventListener('click', () => {        
+    botonAbrirCerrarModal.addEventListener('click', () => {
         mostrarModal();
         modal.classList.toggle('abrir');
         overlay.classList.toggle('open');
     })
-  
+
 
 })
