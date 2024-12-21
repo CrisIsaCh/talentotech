@@ -349,6 +349,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
     
 }
+#btn
 .columnas{
     text-transform: uppercase;
     font-size: 12px;
@@ -597,6 +598,13 @@ footer div span {
     }
 
     /*****************main************************/
+    .btn-eliminar {
+        all: unset;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    
+    }
 
 
     /*******************footer************/
