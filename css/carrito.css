@@ -107,6 +107,7 @@
 #modal-content div button {
     all: unset;
     cursor: pointer;
+    /* visibility: hidden; */
 }
 
 #modal-descripcion {

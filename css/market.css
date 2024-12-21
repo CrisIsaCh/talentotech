@@ -443,6 +443,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ececec;
+    font-size: 20px;
 
 }
 
@@ -453,6 +454,8 @@ input[type=number]::-webkit-outer-spin-button {
 .total {
     display: flex;
     justify-content: space-between;
+    font-size: 25px;
+    color: #ff5e00;
 
 }
 

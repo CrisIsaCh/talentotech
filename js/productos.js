@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contador = document.getElementById('contador');
 
     ////////////////////////////////////////////////////////////////////////
-    const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+    // const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
 
 
 
@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then((data) => {
                 const comidas = data.recipes;
-
-
 
                 // Limpia el contenedor de productos
                 comidasContenedor.innerHTML = "";
@@ -65,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(comida.id);
 
 
+
                 mostrarModal();
                 modal.classList.toggle('abrir');
                 overlay.classList.toggle('open');
@@ -95,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 cantidad: (carrito[indice].cantidad) += 1,
                 imagen: comida.image,
                 ////////////precio harcodeado
-                precio:5450
+                precio: 5450
 
             })
-           
+
 
 
 
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cantidad: 1,
                 imagen: comida.image,
                 ////////////precio harcodeado
-                precio:5450
+                precio: 5450
             })
 
         }
@@ -118,14 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         localStorage.setItem('carrito', JSON.stringify(carrito));
-        
+
     };
 
     ////////cARGAR COMIDAS EN MODAL 
     let mostrarModal = () => {
         const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+        subtotalGral = 0;
         carritoStorage.forEach(elemento => {
-            console.log(precio * cantidad);
+            console.log(elemento.precio * elemento.cantidad);
 
 
             const modalDiv = document.createElement('div');
@@ -143,20 +144,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </a>
             <div>
-               <button><i class="fa-solid fa-x"></i></button>    
+               <button id='btn-eliminar-prod'><i class="fa-solid fa-x"></i></button>    
             </div>    
             `;
 
-///////////////pinta contador del carrito///////////
+            ///////////////////////evento eliminar elemento///////
+            const btnEliminar = modalDiv.querySelector('#btn-eliminar-prod');
+            btnEliminar.addEventListener('click', () => {
+                eliminarProducto(elemento.id);
+
+            })
+
+            ///////////////pinta contador del carrito///////////
             modalContenido.appendChild(modalDiv);
             contador.style.display = 'block'
 
-            contadorCarrito = cantidadTotal()
-            console.log(contadorCarrito);
-            
+            cantidadTotal();
+
             contador.textContent = contadorCarrito
 
-            subtotalGral += precio * cantidad
+            subtotalGral += elemento.precio * elemento.cantidad
             spanSubtotalGral.textContent = `$ ${subtotalGral}`;
 
 
@@ -166,35 +173,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    //////////////////eliminar producto//////////////////
+    let eliminarProducto=(id)=>{
+        const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
+        console.log(carritoStorage);
+        const carrito=carritoStorage.filter(item=>item.id!=id)
+        console.log(carrito);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        modalContenido.innerHTML='';
+        mostrarModal();
+        cantidadTotal()
+        
+        
+        
+
+
+
+    }
+
+
+
+
+
     //////////////////Elimina el contador si es ==0 //////////////////////////////
-    
-    
-    let cantidadTotal=()=>{
+
+
+    let cantidadTotal = () => {
         //////////////////busca en el el objeto el elemento cantidad y los suma
         const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
         const cantidadTotal = carritoStorage.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
         console.log(cantidadTotal);
-        return cantidadTotal
-        
-    }
+        if (cantidadTotal == 0) {
+            contador.style.display = 'none';
+            document.getElementById('span-subtotal').innerText=`$0`
 
-    if (carritoStorage.length == 0) {
-        contador.style.display = 'none';
-    } else {
+        } else {
+            contador.style.display = 'block'
+            contadorCarrito = cantidadTotal
+            contador.textContent = contadorCarrito
 
-       
-        contador.style.display = 'block'
-        contadorCarrito = cantidadTotal()
-        contador.textContent = contadorCarrito
+        }
 
     }
-    
 
-   
+    cantidadTotal();
 
-    // console.log(carritoStorage);
-    // const array = carritoStorage.filter(item => item.id == 2)
-    // console.log(array);
+
+
+
 
 
 
@@ -228,8 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     botonAbrirCerrarModal.addEventListener('click', () => {
         mostrarModal();
+
         modal.classList.toggle('abrir');
         overlay.classList.toggle('open');
+        cantidadTotal();
     })
 
 

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     </div>
                     `;
-
+//////////////////////////////////evento eliminar producto/////////////////////////////
             const btnElimino = itemsDiv.querySelector('#btn-elimina-mobile');
             btnElimino.addEventListener('click', () => {
                 eliminarProducto(elemento.id);
@@ -106,10 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliminarProducto = (id) => {
         const carritoStorage = JSON.parse(localStorage.getItem('carrito')) || [];
         console.log(carritoStorage);
-
-
-
-
 
         const carrito = carritoStorage.filter(item => item.id != id)
         const tbod = document.getElementById('tbody');
@@ -144,6 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (cantidadTotal == 0) {
             contador.style.display = 'none';
+            document.getElementById('subtotal-total').innerText=`$0`;
+            document.getElementById('total-gral').innerText=`$0`;
         } else {
             contador.style.display = 'block'
             contadorCarrito = cantidadTotal
